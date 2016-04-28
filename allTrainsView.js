@@ -11,7 +11,6 @@ var {
     View,
     ListView,
     ActivityIndicatorIOS,
-    //Navigator,
     TouchableOpacity,
 } = React;
 
@@ -76,7 +75,7 @@ var allTrainStationsView = React.createClass({
                 <Text style={styles.name}>{station.name}</Text>
               </View>
               <View style={styles.rightContainer}>
-                <Text style={styles.name}>{station.distance.toFixed(1)}km</Text>
+                <Text style={styles.distance}>{station.distance.toFixed(1)}km</Text>
               </View>
             </View>
           </TouchableHighlight>
@@ -113,6 +112,12 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+    paddingTop:10,
+    paddingBottom:10,
+    paddingRight:20,
+    paddingLeft:20,
   },
     leftContainer: {
         flex: 7,
@@ -122,18 +127,17 @@ var styles = StyleSheet.create({
     },
   name: {
     fontSize: 20,
-    marginBottom: 8,
-    textAlign: 'center',
+    textAlign: 'left',
   },
-  phone: {
-    textAlign: 'center',
+  distance: {
+    textAlign: 'right',
   },
   frame: {
-    paddingTop: 64,
+    paddingTop: 40,
       flex: 1
   },
   listView: {
-    paddingTop: 64,
+    paddingTop: 40,
     backgroundColor: '#F5FCFF',
     flex: 1,
   },

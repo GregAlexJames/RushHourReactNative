@@ -102,9 +102,22 @@
     trainStationList.forEach(function(station){
       station.distance = getDistanceFromLatLonInKm(lat, long, station.lat, station.lng);
     });
+    
+    // Sort the list here as the ListView with ReactNative doesnt support sorting
+    trainStationList.sort((a,b) => {
+        if (a.distance < b.distance) {
+            return -1;
+        }
+        if (a.distance > b.distance) {
+            return 1;
+        }
+        // a must be equal to b
+        return 0;
+    });
   }
   
   var getTrainsForStation = function (station, callback){
+      
     // $http.get("http://api.perthtransit.com/1/train_stations/" + station).then(function(result){
       
     //   var currentTime = new Date();

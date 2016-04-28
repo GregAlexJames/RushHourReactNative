@@ -22,7 +22,6 @@ var allTrainsView = require('./allTrainsView')
 
 class RushHourReactNative extends Component {
   render() {
-    
         return <Router>
             <Scene key="root">
                 <Scene key="allTrainsView" component={allTrainsView} title="Rush Hour React Native" initial={true}/>
@@ -30,20 +29,6 @@ class RushHourReactNative extends Component {
             </Scene>
         </Router>
   };
-    // return (
-    //   <View style={styles.container}>
-    //     <Text style={styles.welcome}>
-    //       Welcome to React Native!
-    //     </Text>
-    //     <Text style={styles.instructions}>
-    //       To get started, edit index.android.js
-    //     </Text>
-    //     <Text style={styles.instructions}>
-    //       Shake or press menu button for dev menu
-    //     </Text>
-    //   </View>
-    // );
-  
 }
 
 
