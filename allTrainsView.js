@@ -92,7 +92,7 @@ var allTrainStationsView = React.createClass({
     },
 
     showTrainStationDetails: function(station){
-      //Router.Actions.HospitalDetailView({hospital: hospital});
+      Router.Actions.stationView({id: station.identifier});
     },
     
     setPositionAndRefresh: function(position) {
@@ -133,11 +133,11 @@ var styles = StyleSheet.create({
     textAlign: 'right',
   },
   frame: {
-    paddingTop: 40,
+    paddingTop: 44,
       flex: 1
   },
   listView: {
-    paddingTop: 40,
+    paddingTop: 44,
     backgroundColor: '#F5FCFF',
     flex: 1,
   },

@@ -19,13 +19,14 @@ import
 } from 'react-native-router-flux';
 
 var allTrainsView = require('./allTrainsView')
+var stationView = require('./stationView')
 
 class RushHourReactNative extends Component {
   render() {
         return <Router>
-            <Scene key="root">
+            <Scene key="root" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle}>
                 <Scene key="allTrainsView" component={allTrainsView} title="Rush Hour React Native" initial={true}/>
-                
+                <scene key="stationView" component={stationView} title="Station" />
             </Scene>
         </Router>
   };
@@ -34,21 +35,11 @@ class RushHourReactNative extends Component {
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  navigationBarStyle:{
+    backgroundColor: '#008635'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  titleStyle:{
+    color: '#ffffff'
   },
 });
 
