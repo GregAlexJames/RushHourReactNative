@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-
 import React, {
   AppRegistry,
   Component,
@@ -24,9 +19,9 @@ var stationView = require('./stationView')
 class RushHourReactNative extends Component {
   render() {
         return <Router>
-            <Scene key="root" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle}>
+            <Scene key="root" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle} backButtonImage={require('./chevron-left-white.png')}>
                 <Scene key="allTrainsView" component={allTrainsView} title="Rush Hour React Native" initial={true}/>
-                <scene key="stationView" component={stationView} title="Station" />
+                <scene key="stationView" component={stationView} title="*Will be Overridden*" />
             </Scene>
         </Router>
   };
@@ -41,6 +36,9 @@ const styles = StyleSheet.create({
   titleStyle:{
     color: '#ffffff'
   },
+  leftButtonTextStyle:{
+    color: '#ffffff'
+  }
 });
 
 AppRegistry.registerComponent('RushHourReactNative', () => RushHourReactNative);

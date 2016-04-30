@@ -43,6 +43,10 @@ class stationView extends Component {
                 );
         });
      }
+     
+     getTitle() {
+         return "Hello World";
+     }
 
     render() {
       if (this.state.isLoading) {
@@ -80,6 +84,19 @@ class stationView extends Component {
 
 
 var styles = StyleSheet.create({
+    container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+    paddingTop:10,
+    paddingBottom:10,
+    paddingRight:20,
+    paddingLeft:20,
+  },
   frame: {
     paddingTop: 44,
       flex: 1

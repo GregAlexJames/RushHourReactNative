@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, {
   AppRegistry,
   Component,
@@ -12,42 +6,39 @@ import React, {
   View
 } from 'react-native';
 
+import 
+{
+  Actions, 
+  Scene, 
+  Router
+} from 'react-native-router-flux';
+
+var allTrainsView = require('./allTrainsView')
+var stationView = require('./stationView')
+
 class RushHourReactNative extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
+        return <Router>
+            <Scene key="root" navigationBarStyle={styles.navigationBarStyle} titleStyle={styles.titleStyle} backButtonImage={require('./chevron-left-white.png')}>
+                <Scene key="allTrainsView" component={allTrainsView} title="Rush Hour React Native" initial={true}/>
+                <scene key="stationView" component={stationView} title="*Will be Overridden*" />
+            </Scene>
+        </Router>
+  };
 }
 
+
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  navigationBarStyle:{
+    backgroundColor: '#008635'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  titleStyle:{
+    color: '#ffffff'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  leftButtonTextStyle:{
+    color: '#ffffff'
+  }
 });
 
 AppRegistry.registerComponent('RushHourReactNative', () => RushHourReactNative);

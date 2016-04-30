@@ -16,13 +16,13 @@ var {
 
 var ProgressIndicator = require('./ProgressIndicator')
 var TrainStationService = require('./TrainStationService');
-//var HospitalDetailView = require('./HospitalDetailView');
 
 var Router = require('react-native-router-flux')
 
 var allTrainStationsView = React.createClass({
 
   getInitialState: function() {
+      
       var tempds = new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       });
@@ -92,7 +92,7 @@ var allTrainStationsView = React.createClass({
     },
 
     showTrainStationDetails: function(station){
-      Router.Actions.stationView({id: station.identifier});
+      Router.Actions.stationView({id: station.identifier, title: station.name});
     },
     
     setPositionAndRefresh: function(position) {
